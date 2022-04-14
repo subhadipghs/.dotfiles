@@ -144,3 +144,6 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 
 # Automatically added during dotfile management
 alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=/home/subhadip'
+
+# Show neofetch on init
+neofetch
