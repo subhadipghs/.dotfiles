@@ -145,5 +145,8 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 # Automatically added during dotfile management
 alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=/home/subhadip'
 
-# Show neofetch on init
-neofetch
+# Show info
+PF_INFO="ascii title os host kernel uptime pkgs memory"
+export BFETCH_INFO="pfetch"
+export BFETCH_ART="printf \"\033[35m\"; figlet -f Bloody Welcome"
+bfetch
