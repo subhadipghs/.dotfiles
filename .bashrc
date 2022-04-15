@@ -147,6 +147,7 @@ alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=/home/subh
 
 # Show info
 PF_INFO="ascii title os host kernel uptime pkgs memory"
+echo
 export BFETCH_INFO="pfetch"
 export BFETCH_ART="printf \"\033[35m\"; figlet -f Bloody Welcome"
 bfetch
