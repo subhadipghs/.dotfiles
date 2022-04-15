@@ -48,6 +48,11 @@ local config = {
     -- Add plugins, the packer syntax without the "use"
     init = {
       { "tomasiser/vim-code-dark" },
+      { 
+        "prettier/vim-prettier",
+        ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
+        run = 'yarn install --frozen-lockfile --production'
+      },
       -- {
       --   "ray-x/lsp_signature.nvim",
       --   event = "BufRead",
@@ -157,13 +162,16 @@ local config = {
 
     -- Set key bindings
     map("n", "<C-s>", ":w!<CR>", opts)
-
     -- Set autocommands
     vim.cmd [[
       augroup packer_conf
         autocmd!
         autocmd bufwritepost plugins.lua source <afile> | PackerSync
       augroup end
+    ]]
+    -- On saving javascript/typescript file format with prettier 
+    vim.cmd [[
+      autocmd bufwritepre *.js,*ts,*.tsx,*.graphql,*.html,*.css | Prettier
     ]]
   end,
 }
