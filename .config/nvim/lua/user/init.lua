@@ -171,7 +171,7 @@ local config = {
     ]]
     -- On saving javascript/typescript file format with prettier 
     vim.cmd [[
-      autocmd bufwritepre *.js,*ts,*.tsx,*.graphql,*.html,*.css | Prettier
+      autocmd bufwritepre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css | Prettier
     ]]
   end,
 }
