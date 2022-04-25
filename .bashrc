@@ -128,7 +128,7 @@ export CARGO_HOME="$HOME/.cargo"
 . "$HOME/.cargo/env"
 
 # Automatically added during dotfile management
-alias config='/usr/bin/git --git-dir=/home/subhadip/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=$HOME'
 
 # Show info
 PF_INFO="ascii title os host kernel uptime pkgs memory"
