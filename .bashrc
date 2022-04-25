@@ -122,28 +122,13 @@ alias tmux="TERM=screen-256color-bce tmux -u"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH='/home/subhadip/go'
 export GOROOT='/usr/local/go'
-export DENO_INSTALL="/home/subhadip/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-export GEM_HOME="$HOME/.gem"
 export CARGO_HOME="$HOME/.cargo"
-
-# Ruby Installation
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
-# Sdkman for JDK versions
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Kitty Config
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 
 # Rust Cargo Instllation
 . "$HOME/.cargo/env"
 
 # Automatically added during dotfile management
-alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=/home/subhadip'
+alias config='/usr/bin/git --git-dir=/home/subhadip/.dotfiles/ --work-tree=$HOME'
 
 # Show info
 PF_INFO="ascii title os host kernel uptime pkgs memory"
