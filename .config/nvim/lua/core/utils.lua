@@ -2,7 +2,7 @@ local M = {}
 
 local supported_configs = {
   vim.fn.stdpath "config",
-  vim.fn.stdpath "config" .. "/../astrovim",
+  vim.fn.stdpath "config" .. "/../astronvim",
 }
 
 local g = vim.g
@@ -41,7 +41,7 @@ end
 
 local _user_settings = load_user_settings()
 
-local _user_terminals = {}
+M.user_terminals = {}
 
 local function func_or_extend(overrides, default)
   if default == nil then
@@ -76,7 +76,7 @@ local function load_options(module, default)
   return default
 end
 
-M.base_notification = { title = "AstroVim" }
+M.base_notification = { title = "AstroNvim" }
 
 function M.bootstrap()
   local fn = vim.fn
@@ -90,8 +90,8 @@ function M.bootstrap()
       "https://github.com/wbthomason/packer.nvim",
       install_path,
     }
-    print "Cloning packer...\nSetup AstroVim"
-    vim.cmd [[packadd packer.nvim]]
+    print "Cloning packer...\nSetup AstroNvim"
+    vim.cmd "packadd packer.nvim"
   end
 end
 
@@ -158,11 +158,40 @@ function M.list_registered_linters(filetype)
   return registered_providers[formatter_method] or {}
 end
 
-function M.toggle_term_cmd(cmd)
-  if _user_terminals[cmd] == nil then
-    _user_terminals[cmd] = require("toggleterm.terminal").Terminal:new { cmd = cmd, hidden = true }
+-- term_details can be either a string for just a command or
+-- a complete table to provide full access to configuration when calling Terminal:new()
+function M.toggle_term_cmd(term_details)
+  if type(term_details) == "string" then
+    term_details = { cmd = term_details, hidden = true }
   end
-  _user_terminals[cmd]:toggle()
+  local term_key = term_details.cmd
+  if vim.v.count > 0 and term_details.count == nil then
+    term_details.count = vim.v.count
+    term_key = term_key .. vim.v.count
+  end
+  if M.user_terminals[term_key] == nil then
+    M.user_terminals[term_key] = require("toggleterm.terminal").Terminal:new(term_details)
+  end
+  M.user_terminals[term_key]:toggle()
+end
+
+function M.add_cmp_source(source, priority)
+  if type(priority) ~= "number" then
+    priority = 1000
+  end
+  local cmp_avail, cmp = pcall(require, "cmp")
+  if cmp_avail then
+    local config = cmp.get_config()
+    table.insert(config.sources, { name = source, priority = priority })
+    cmp.setup(config)
+  end
+end
+
+function M.add_user_cmp_source(source)
+  local priority = M.user_plugin_opts("cmp.source_priority", _user_settings.cmp.source_priority)[source]
+  if priority then
+    M.add_cmp_source(source, priority)
+  end
 end
 
 function M.label_plugins(plugins)
