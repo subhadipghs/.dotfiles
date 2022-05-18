@@ -101,7 +101,7 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " settings
 let g:dracula_italic = 0
-colorscheme codedark
+colorscheme dracula
 let g:airline_theme='codedark'
 
 nmap <C-n> :NERDTreeToggle<cr>
