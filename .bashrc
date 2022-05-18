@@ -136,3 +136,6 @@ echo
 export BFETCH_INFO="pfetch"
 export BFETCH_ART="printf \"\033[35m\"; figlet -f Bloody Welcome"
 bfetch
+
+# Sdkman
+source "$HOME/.sdkman/bin/sdkman-init.sh"
