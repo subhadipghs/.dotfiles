@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "codedark",
+  colorscheme = "ayu",
 
 
   -- Disable default plugins
@@ -33,8 +33,10 @@ local config = {
     -- Add plugins, the packer syntax without the "use"
     init = {
       { "tomasiser/vim-code-dark" },
+      { "cseelus/vim-colors-lucid" },
       { "marko-cerovac/material.nvim" },
       { "bluz71/vim-nightfly-guicolors" },
+      { "ayu-theme/ayu-vim" },
       { 
         "prettier/vim-prettier",
         ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
