@@ -1,8 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "ayu",
-
+  colorscheme = "codedark",
 
   -- Disable default plugins
   enabled = {
@@ -37,6 +36,12 @@ local config = {
       { "marko-cerovac/material.nvim" },
       { "bluz71/vim-nightfly-guicolors" },
       { "ayu-theme/ayu-vim" },
+      { "artanikin/vim-synthwave84" },
+      { "ahmedabdulrahman/aylin.vim" },
+      { "tomasr/molokai" },
+      { "keitanakamura/neodark.vim" },
+      { "rhysd/vim-color-spring-night" },
+      { "gkjgh/cobalt" },
       { 
         "prettier/vim-prettier",
         ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
@@ -57,12 +62,8 @@ local config = {
     packer = {
       compile_path = vim.fn.stdpath "config" .. "/lua/packer_compiled.lua",
     },
-    lualine = {
-      options = {
-        theme = 'nightfly'
-      }
-    }
   },
+
 
   -- Add paths for including more VS Code style snippets in luasnip
   luasnip = {

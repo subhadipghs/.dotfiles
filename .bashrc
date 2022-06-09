@@ -119,8 +119,9 @@ export PATH=~/.local/bin:$HOME/Apps/idea-IU-213.7172.25/bin:$PATH
 # Aliases
 alias py="python3"
 alias tmux="TERM=screen-256color-bce tmux -u"
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/Android/Sdk:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/platform-tools/
 export GOPATH='/home/subhadip/go'
+export JAVA_HOME='/home/subhadip/.sdkman/candidates/java/8.0.302-open'
 export GOROOT='/usr/local/go'
 export CARGO_HOME="$HOME/.cargo"
 
@@ -139,3 +140,4 @@ bfetch
 
 # Sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
