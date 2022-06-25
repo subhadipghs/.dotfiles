@@ -140,4 +140,7 @@ bfetch
 
 # Sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-
+eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
