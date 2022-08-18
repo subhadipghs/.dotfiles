@@ -135,12 +135,13 @@ alias config='/usr/bin/git --git-dir=/home/subhadip/.cfg/ --work-tree=$HOME'
 PF_INFO="ascii title os host kernel uptime pkgs memory"
 echo
 export BFETCH_INFO="pfetch"
-export BFETCH_ART="printf \"\033[35m\"; figlet -f Bloody Welcome"
+export BFETCH_ART="printf \"\033[35m\"; figlet -f slant AY AY CAPTAIN;"
 bfetch
 
 # Sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-eval "$(pyenv virtualenv-init -)"
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+source /home/subhadip/Documents/code/alacritty/extra/completions/alacritty.bash

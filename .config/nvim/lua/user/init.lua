@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "codedark",
+  colorscheme = "kanagawa",
 
   -- Disable default plugins
   enabled = {
@@ -31,6 +31,7 @@ local config = {
   plugins = {
     -- Add plugins, the packer syntax without the "use"
     init = {
+      { "rebelot/kanagawa.nvim" },
       { "tomasiser/vim-code-dark" },
       { "cseelus/vim-colors-lucid" },
       { "marko-cerovac/material.nvim" },
