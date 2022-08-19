@@ -1,10 +1,10 @@
 font:
   # Normal (roman) font face
   normal:
-    family: 'Mononoki Nerd Font'
+    family: 'JetbrainsMono NF'
     style: Regular
     # Font size
-  size: 12.5
+  size: 13
 # Kanagawa Alacritty Colors
 colors:
   primary:
