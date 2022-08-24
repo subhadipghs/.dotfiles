@@ -11,6 +11,12 @@ export AWS_CONFIG_FILE="~/.aws/config"
 # Dotfile git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+
+# Pyenv setup
+export PYENV_ROOT="$HOME/.pyenv" 
+export PATH="$PYENV_ROOT/bin:$PATH" 
+eval "$(pyenv init --path)" 
+eval "$(pyenv init -)"
