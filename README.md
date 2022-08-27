@@ -4,6 +4,7 @@ Configuration files:
 
 
 ## Windows Powershell Configuration
+Heavily inspired from this [Youtube video](https://www.youtube.com/watch?v=5-aK2_WwrmM)
 1. [Scoop](https://scoop.sh/)
 2. [Latest Powershell](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2)
 3. [Caskaydia Code Nerd Font](https://www.nerdfonts.com/font-downloads)
