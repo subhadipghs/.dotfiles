@@ -25,15 +25,15 @@ Configuration files:
     
   - Paste the content below in the previously created file
   
-   ```ps1
-   Set-Alias vim nvim
-   Set-Alias g git
-   Set-Alias ls dir
-   Set-Alias grep findstr
-   ```
+    ```ps1
+    Set-Alias vim nvim
+    Set-Alias g git
+    Set-Alias ls dir
+    Set-Alias grep findstr
+    ```
   
   - Link the `user_profile.ps1` file in the actual powershell configuration file. Open the default powershell configuration file and paste the content below
    
-   ```ps1
-   . $env:USERPROFILE\.config\powershell\user_profile.ps1
-   ```
+    ```ps1
+    . $env:USERPROFILE\.config\powershell\user_profile.ps1
+    ```
