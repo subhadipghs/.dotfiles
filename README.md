@@ -8,10 +8,12 @@ Configuration files:
 2. [Latest Powershell](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2)
 3. [Caskaydia Code Nerd Font](https://www.nerdfonts.com/font-downloads)
 4. [Oh My Posh](https://ohmyposh.dev/docs/installation/windows)
+5. [Git](https://git-scm.com/downloads)
+6. [Neovim](https://neovim.io/)
 
 ### Scoop
   - After installing scoop install the following dependecies using scoop.
   
     ```sh
-    scoop install curl sudo jq oh-my-posh
+    scoop install curl sudo jq oh-my-posh neovim gcc
     ```
