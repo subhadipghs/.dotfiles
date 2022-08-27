@@ -33,8 +33,8 @@ Configuration files:
   
     ```ps1
     Import-Module posh-git
-    Import-Module oh-my-posh
-    Set-PoshPrompt Atomic
+    # Initialize oh-my-posh
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" | Invoke-Expression
     
     Set-Alias vim nvim
     Set-Alias g git
