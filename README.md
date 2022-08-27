@@ -22,6 +22,8 @@ Configuration files:
     ```ps1
     Install-Module posh-git -Scope CurrentUser -Force
     Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+    Install-Module -Name z -Force
+    Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
     ```
   - Create a powershell user user
   
