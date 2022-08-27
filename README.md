@@ -21,7 +21,7 @@ Configuration files:
   
     ```ps1
     Install-Module posh-git -Scope CurrentUser -Force
-    Install-Module oh-my-posh -Scope CurrentUser -Force
+    Install-Module -Name Terminal-Icons -Repository PSGallery -Force
     ```
   - Create a powershell user user
   
@@ -33,6 +33,7 @@ Configuration files:
   
     ```ps1
     Import-Module posh-git
+    Import-Module Terminal-Icons
     # Initialize oh-my-posh
     oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" | Invoke-Expression
     
