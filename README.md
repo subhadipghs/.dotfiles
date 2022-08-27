@@ -9,8 +9,9 @@ Configuration files:
 3. [Caskaydia Code Nerd Font](https://www.nerdfonts.com/font-downloads)
 4. [Oh My Posh](https://ohmyposh.dev/docs/installation/windows)
 
-1. Scoop
+### Scoop
   - After installing scoop install the following dependecies using scoop.
+  
     ```sh
     scoop install curl sudo jq oh-my-posh
     ```
