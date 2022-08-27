@@ -16,7 +16,7 @@ Heavily inspired from this [Youtube video](https://www.youtube.com/watch?v=5-aK2
   - After installing scoop install the following dependecies using scoop.
   
     ```sh
-    scoop install curl sudo jq oh-my-posh neovim gcc
+    scoop install curl sudo jq oh-my-posh neovim gcc fzf ripgrep
     ```
   - Install powershell modules
   
@@ -25,6 +25,7 @@ Heavily inspired from this [Youtube video](https://www.youtube.com/watch?v=5-aK2
     Install-Module -Name Terminal-Icons -Repository PSGallery -Force
     Install-Module -Name z -Force
     Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+    Install-Module -Name PsFzf -Force
     ```
   - Create a powershell user user
   
@@ -37,9 +38,12 @@ Heavily inspired from this [Youtube video](https://www.youtube.com/watch?v=5-aK2
     ```ps1
     Import-Module posh-git
     Import-Module Terminal-Icons
+    Import-Module PsFzf
     # Initialize oh-my-posh
     oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json" | Invoke-Expression
-    
+    # FZF Plugin
+    Set-PsFzfOption -PSReadLineChordProvider 'Ctrl+f' -PSReadLineChordReversedHistory 'Ctrl+r'
+
     Set-Alias vim nvim
     Set-Alias g git
     Set-Alias ls dir
