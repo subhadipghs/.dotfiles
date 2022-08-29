@@ -1,8 +1,9 @@
 font:
   # Normal (roman) font face
   normal:
-    family: 'JetbrainsMono NF'
-    style: Regular
+    # family: 'JetbrainsMono NF'
+    family: 'Hurmit Nerd Font Mono'
+    # style: Regular
     # Font size
   size: 13
 # Kanagawa Alacritty Colors
@@ -37,10 +38,11 @@ colors:
 
   indexed_colors:
     - { index: 16, color: '0xffa066' }
-    - { index: 17, color: '0xff5d62' }# window settings
+    - { index: 17, color: '0xff5d62' }
 
 
+# window settings
 window:
-  opacity: 1.0
+  opacity: 0.9
   maximized: true
   startup_mode: Maximized

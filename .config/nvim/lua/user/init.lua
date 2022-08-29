@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "kanagawa",
+  colorscheme = "neodark",
 
   -- Disable default plugins
   enabled = {
@@ -41,6 +41,13 @@ local config = {
       { "ahmedabdulrahman/aylin.vim" },
       { "tomasr/molokai" },
       { "keitanakamura/neodark.vim" },
+      [ "xiyaowong/nvim-transparent" ] = {
+        config = function()
+          require('transparent').setup {
+            enable = true
+          }
+        end
+      },
       { "rhysd/vim-color-spring-night" },
       { "gkjgh/cobalt" },
       { 
