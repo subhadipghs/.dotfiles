@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "neodark",
+  colorscheme = "material",
 
   -- Disable default plugins
   enabled = {
@@ -44,7 +44,7 @@ local config = {
       [ "xiyaowong/nvim-transparent" ] = {
         config = function()
           require('transparent').setup {
-            enable = true
+            enable = false
           }
         end
       },
