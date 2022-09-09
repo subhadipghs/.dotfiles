@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "material",
+  colorscheme = "codedark",
 
   -- Disable default plugins
   enabled = {
@@ -33,6 +33,7 @@ local config = {
     init = {
       { "rebelot/kanagawa.nvim" },
       { "tomasiser/vim-code-dark" },
+      { "voldikss/vim-floaterm" },
       { "cseelus/vim-colors-lucid" },
       { "marko-cerovac/material.nvim" },
       { "bluz71/vim-nightfly-guicolors" },

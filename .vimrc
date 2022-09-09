@@ -1,18 +1,18 @@
 call plug#begin('~/.vim/plugged')
-Plug 'preservim/nerdtree'
 Plug 'neoclide/vim-jsx-improve'
 " Plug 'Shougo/vimfiler.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/unite.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'edkolev/tmuxline.vim'
+Plug 'shougo/vimfiler.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-surround'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dracula/vim'
+Plug 'voldikss/vim-floaterm'
 Plug 'jiangmiao/auto-pairs'
 Plug 'herringtondarkholme/yats.vim'
 " Make sure you use single quotes
@@ -40,10 +40,6 @@ set background=dark
 set expandtab
 set shiftwidth=2
 filetype plugin indent on
-
-" Ignore files
-let NERDTreeIgnore = ['node_modules', 'dist', 'build', '.next']
-
 
 
 " use 256 colors in terminal
@@ -101,10 +97,11 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " settings
 let g:dracula_italic = 0
-colorscheme dracula
+colorscheme codedark
 let g:airline_theme='codedark'
+let g:vimfiler_as_default_explorer = 1
 
-nmap <C-n> :NERDTreeToggle<cr>
+nmap <C-n> :VimFiler<cr>
 let g:indent_guides_enable_on_vim_startup = 1
 " tmuxline seperator
 let g:tmuxline_powerline_separators = 0 
