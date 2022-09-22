@@ -31,7 +31,9 @@ local config = {
   plugins = {
     -- Add plugins, the packer syntax without the "use"
     init = {
+      { "pseewald/vim-anyfold" },
       { "rebelot/kanagawa.nvim" },
+      { "jacoborus/tender.vim" },
       { "tomasiser/vim-code-dark" },
       { "voldikss/vim-floaterm" },
       { "cseelus/vim-colors-lucid" },
@@ -182,6 +184,17 @@ local config = {
     -- On saving javascript/typescript file format with prettier 
     vim.cmd [[
       autocmd bufwritepre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css | Prettier
+    ]]
+
+    vim.cmd [[
+      autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
+    ]]
+    -- vim folds
+    vim.cmd [[
+      filetype plugin indent on
+      syntax on
+      autocmd Filetype * AnyFoldActivate 
+      set foldlevel=99  " opn all folds
     ]]
   end,
 }
