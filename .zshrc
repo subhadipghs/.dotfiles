@@ -18,6 +18,7 @@ alias reloadzsh="source ~/.zshrc"
 
 # Git aliases
 alias gc="git commit -v"
+alias gch="git checkout"
 alias ga="git add"
 alias gaa="git add ."
 alias gs="git status --short"
