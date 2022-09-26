@@ -44,6 +44,6 @@ font:
 #
 # window settings
 window:
-  opacity: 1.0
+  opacity: 0.9
   maximized: true
   startup_mode: Maximized

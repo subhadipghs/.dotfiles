@@ -1,13 +1,12 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "codedark",
+  colorscheme = "nightfly",
 
   -- Disable default plugins
   enabled = {
     bufferline = true,
     neo_tree = true,
-    lualine = true,
     gitsigns = true,
     colorizer = true,
     toggle_term = true,
@@ -32,6 +31,8 @@ local config = {
     -- Add plugins, the packer syntax without the "use"
     init = {
       { "pseewald/vim-anyfold" },
+      { "mhartington/oceanic-next" },
+      { "shaunsingh/nord.nvim" },
       { "rebelot/kanagawa.nvim" },
       { "jacoborus/tender.vim" },
       { "tomasiser/vim-code-dark" },
@@ -156,7 +157,22 @@ local config = {
       end,
     }
   end,
+  
 
+  -- ["feline"] = function()
+  --   local status_ok, null_ls = pcall(require, "feline")
+  --   if not status_ok then
+  --     return
+  --   end
+  --
+  --   feline.setup = {
+  --     theme = {
+  --       fg = status.get_hl_prop("Feline", "foreground", '#fff'),
+  --       bg = status.get_hl_prop("Feline", "background", '#f00'),
+  --     }
+  --   }
+  -- end,
+  
   -- This function is run last
   -- good place to configure mappings and vim options
   polish = function()
