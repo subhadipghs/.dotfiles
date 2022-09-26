@@ -1,7 +1,7 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "nightfly",
+  colorscheme = "material",
 
   -- Disable default plugins
   enabled = {
@@ -41,6 +41,48 @@ local config = {
       { "marko-cerovac/material.nvim" },
       { "bluz71/vim-nightfly-guicolors" },
       { "ayu-theme/ayu-vim" },
+      { 
+        "nvim-lualine/lualine.nvim",
+        config = function()
+          require('lualine').setup {
+             options = {
+               icons_enabled = true,
+               theme = 'auto',
+               component_separators = '|',
+               section_separators = { left = '', right = '' },
+             },
+             sections = {
+               lualine_a = {
+                 { 'mode', separator = { left = '' }, right_padding = 2 },
+               },
+               lualine_b = { 
+                 'filename', 
+                 { 
+                   'branch', 
+                   icon = { '' } 
+                 }, 
+                 'diff', 
+                 'diagnostics' 
+               },
+               lualine_c = { "os.date('%a')", 'data', "require'lsp-status'.status()" },
+               lualine_x = {},
+               lualine_y = { 'filetype', 'progress' },
+               lualine_z = {
+                 { 'location', separator = { right = '' }, left_padding = 2 },
+               },
+             },
+             inactive_sections = {
+               lualine_a = { 'filename' },
+               lualine_b = {},
+               lualine_c = {},
+               lualine_x = {},
+               lualine_y = {},
+               lualine_z = { 'location' },
+             },
+             tabline = {},
+          }
+        end,
+      },
       { "artanikin/vim-synthwave84" },
       { "ahmedabdulrahman/aylin.vim" },
       { "tomasr/molokai" },
@@ -48,8 +90,7 @@ local config = {
       [ "xiyaowong/nvim-transparent" ] = {
         config = function()
           require('transparent').setup {
-            enable = false
-          }
+            enable = false }
         end
       },
       { "rhysd/vim-color-spring-night" },

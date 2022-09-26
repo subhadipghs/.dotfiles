@@ -1,9 +1,10 @@
 font:
   # Normal (roman) font face
   normal:
-    family: 'MonacoB Nerd Font'
+    # family: 'MonacoB Nerd Font'
+    family: 'JetbrainsMono NF'
     # family: 'Hurmit Nerd Font Mono'
-    style: Bold
+    style: Regular
     # Font size
   size: 12.8
 # Kanagawa Alacritty Colors
