@@ -22,6 +22,6 @@ colors:
     cyan: "0x9CDCFE"
     white: "0xD4D4D4"
 window:
-  opacity: 1.0
+  opacity: 0.9
   maximized: true
   startup_mode: Maximized

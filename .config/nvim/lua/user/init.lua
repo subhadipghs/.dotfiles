@@ -1,13 +1,12 @@
 local config = {
 
   -- Set colorscheme
-  colorscheme = "codedark",
+  colorscheme = "material",
 
   -- Disable default plugins
   enabled = {
     bufferline = true,
     neo_tree = true,
-    lualine = true,
     gitsigns = true,
     colorizer = true,
     toggle_term = true,
@@ -31,13 +30,59 @@ local config = {
   plugins = {
     -- Add plugins, the packer syntax without the "use"
     init = {
+      { "pseewald/vim-anyfold" },
+      { "mhartington/oceanic-next" },
+      { "shaunsingh/nord.nvim" },
       { "rebelot/kanagawa.nvim" },
+      { "jacoborus/tender.vim" },
       { "tomasiser/vim-code-dark" },
       { "voldikss/vim-floaterm" },
       { "cseelus/vim-colors-lucid" },
       { "marko-cerovac/material.nvim" },
       { "bluz71/vim-nightfly-guicolors" },
       { "ayu-theme/ayu-vim" },
+      { 
+        "nvim-lualine/lualine.nvim",
+        config = function()
+          require('lualine').setup {
+             options = {
+               icons_enabled = true,
+               theme = 'auto',
+               component_separators = '|',
+               section_separators = { left = '', right = '' },
+             },
+             sections = {
+               lualine_a = {
+                 { 'mode', separator = { left = '' }, right_padding = 2 },
+               },
+               lualine_b = { 
+                 'filename', 
+                 { 
+                   'branch', 
+                   icon = { '' } 
+                 }, 
+                 'diff', 
+                 'diagnostics' 
+               },
+               lualine_c = { "os.date('%a')", 'data', "require'lsp-status'.status()" },
+               lualine_x = {},
+               lualine_y = { 'filetype', 'progress' },
+               lualine_z = {
+                 { 'location', separator = { right = '' }, left_padding = 2 },
+               },
+             },
+             inactive_sections = {
+               lualine_a = { 'filename' },
+               lualine_b = {},
+               lualine_c = {},
+               lualine_x = {},
+               lualine_y = {},
+               lualine_z = { 'location' },
+             },
+             tabline = {},
+          }
+        end,
+      },
       { "artanikin/vim-synthwave84" },
       { "ahmedabdulrahman/aylin.vim" },
       { "tomasr/molokai" },
@@ -45,8 +90,7 @@ local config = {
       [ "xiyaowong/nvim-transparent" ] = {
         config = function()
           require('transparent').setup {
-            enable = false
-          }
+            enable = false }
         end
       },
       { "rhysd/vim-color-spring-night" },
@@ -154,7 +198,22 @@ local config = {
       end,
     }
   end,
+  
 
+  -- ["feline"] = function()
+  --   local status_ok, null_ls = pcall(require, "feline")
+  --   if not status_ok then
+  --     return
+  --   end
+  --
+  --   feline.setup = {
+  --     theme = {
+  --       fg = status.get_hl_prop("Feline", "foreground", '#fff'),
+  --       bg = status.get_hl_prop("Feline", "background", '#f00'),
+  --     }
+  --   }
+  -- end,
+  
   -- This function is run last
   -- good place to configure mappings and vim options
   polish = function()
@@ -182,6 +241,17 @@ local config = {
     -- On saving javascript/typescript file format with prettier 
     vim.cmd [[
       autocmd bufwritepre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css | Prettier
+    ]]
+
+    vim.cmd [[
+      autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
+    ]]
+    -- vim folds
+    vim.cmd [[
+      filetype plugin indent on
+      syntax on
+      autocmd Filetype * AnyFoldActivate 
+      set foldlevel=99  " opn all folds
     ]]
   end,
 }
