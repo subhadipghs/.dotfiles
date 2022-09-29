@@ -6,7 +6,7 @@ font:
     style: Bold
     # Font size
   size: 11.8
-# window # Colors (Dark plus)
+# Colors (Dark)
 colors:
   primary:
     background: "0x1E1E1E"
@@ -21,7 +21,8 @@ colors:
     magenta: "0xC586C0"
     cyan: "0x9CDCFE"
     white: "0xD4D4D4"
+
 window:
-  opacity: 0.9
+  opacity: 1.0
   maximized: true
   startup_mode: Maximized
