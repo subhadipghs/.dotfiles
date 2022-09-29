@@ -119,7 +119,12 @@ export PATH=~/.local/bin:$HOME/Apps/idea-IU-213.7172.25/bin:$PATH
 # Aliases
 alias py="python3"
 alias tmux="TERM=screen-256color-bce tmux -u"
-export PATH=$PATH:/usr/local/go/bin:$HOME/Android/Sdk:$HOME/Android/Sdk/tools:$HOME/Android/Sdk/platform-tools/
+export PATH=$PATH:/usr/local/go/bin:$HOME/apps/flutter/bin
+# android settigs
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
 export GOPATH='/home/subhadip/go'
 export JAVA_HOME='/home/subhadip/.sdkman/candidates/java/8.0.302-open'
 export GOROOT='/usr/local/go'
@@ -144,4 +149,6 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
-source /home/subhadip/Documents/code/alacritty/extra/completions/alacritty.bash
+
+# oh-my-posh
+eval "$(oh-my-posh init bash --config ~/.poshthemes/robbyrussel.omp.json)"
