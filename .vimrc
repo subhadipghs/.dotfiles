@@ -101,7 +101,7 @@ colorscheme codedark
 let g:airline_theme='codedark'
 let g:vimfiler_as_default_explorer = 1
 
-nmap <C-n> :VimFiler<cr>
+nmap <C-n> :VimFilerExplorer<cr>
 let g:indent_guides_enable_on_vim_startup = 1
 " tmuxline seperator
 let g:tmuxline_powerline_separators = 0 
