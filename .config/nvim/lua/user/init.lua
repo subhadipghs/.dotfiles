@@ -31,75 +31,81 @@ local config = {
     -- Add plugins, the packer syntax without the "use"
     init = {
       { "pseewald/vim-anyfold" },
-      { "Mofiqul/vscode.nvim"},
-      { "mhartington/oceanic-next" },
-      { "shaunsingh/nord.nvim" },
+      { "patstockwell/vim-monokai-tasty" },
+      { "catppuccin/nvim" },
+      { "Mofiqul/vscode.nvim" },
+      -- { "mhartington/oceanic-next" },
+      -- { "shaunsingh/nord.nvim" },
       { "rebelot/kanagawa.nvim" },
       { "jacoborus/tender.vim" },
+      { "ellisonleao/gruvbox.nvim" },
       -- { "tomasiser/vim-code-dark" },
       { "voldikss/vim-floaterm" },
-      { "cseelus/vim-colors-lucid" },
-      { "marko-cerovac/material.nvim" },
-      { "bluz71/vim-nightfly-guicolors" },
-      { "ayu-theme/ayu-vim" },
-      { 
+      -- { "cseelus/vim-colors-lucid" },
+      -- { "marko-cerovac/material.nvim" },
+      -- { "bluz71/vim-nightfly-guicolors" },
+      -- { "ayu-theme/ayu-vim" },
+      { "folke/tokyonight.nvim" },
+      {
         "nvim-lualine/lualine.nvim",
         config = function()
           require('lualine').setup {
-             options = {
-               icons_enabled = true,
-               theme = 'auto',
-               component_separators = '|',
-               -- section_separators = { left = '', right = '' },
-               section_separators = { left = '', right = '' },
-             },
-             sections = {
-               lualine_a = {
-                 { 'mode', separator = { left = '' }, right_padding = 2 },
-               },
-               lualine_b = { 
-                 'filename', 
-                 { 
-                   'branch', 
-                   icon = { '' } 
-                 }, 
-                 'diff', 
-                 'diagnostics' 
-               },
-               lualine_c = { "os.date('%a')", 'data', "require'lsp-status'.status()" },
-               lualine_x = {},
-               lualine_y = { 'filetype', 'progress' },
-               lualine_z = {
-                 { 'location', separator = { right = '' }, left_padding = 2 },
-               },
-             },
-             inactive_sections = {
-               lualine_a = { 'filename' },
-               lualine_b = {},
-               lualine_c = {},
-               lualine_x = {},
-               lualine_y = {},
-               lualine_z = { 'location' },
-             },
-             tabline = {},
+            options = {
+              icons_enabled = true,
+              theme = 'auto',
+              component_separators = '|',
+              -- section_separators = { left = '', right = '' },
+              section_separators = { left = '', right = '' },
+            },
+            sections = {
+              lualine_a = {
+                -- { 'mode', separator = { left = '' }, right_padding = 2 },
+                { 'mode', separator = { left = '' }, right_padding = 2 },
+              },
+              lualine_b = {
+                'filename',
+                {
+                  'branch',
+                  icon = { '' }
+                },
+                'diff',
+                'diagnostics'
+              },
+              lualine_c = { "os.date('%a')", 'data', "require'lsp-status'.status()" },
+              lualine_x = {},
+              lualine_y = { 'filetype', 'progress' },
+              lualine_z = {
+                -- { 'location', separator = { right = '' }, left_padding = 2 },
+                { 'location', separator = { right = '' }, left_padding = 2 },
+              },
+            },
+            inactive_sections = {
+              lualine_a = { 'filename' },
+              lualine_b = {},
+              lualine_c = {},
+              lualine_x = {},
+              lualine_y = {},
+              lualine_z = { 'location' },
+            },
+            tabline = {},
           }
         end,
       },
-      { "artanikin/vim-synthwave84" },
-      { "ahmedabdulrahman/aylin.vim" },
-      { "tomasr/molokai" },
-      { "keitanakamura/neodark.vim" },
-      [ "xiyaowong/nvim-transparent" ] = {
-        config = function()
-          require('transparent').setup {
-            enable = false }
-        end
-      },
-      { "rhysd/vim-color-spring-night" },
-      { "gkjgh/cobalt" },
-      { 
+      -- { "artanikin/vim-synthwave84" },
+      -- { "ahmedabdulrahman/aylin.vim" },
+      -- { "tomasr/molokai" },
+      -- { "keitanakamura/neodark.vim" },
+      -- [ "xiyaowong/nvim-transparent" ] = {
+      --   config = function()
+      --     require('transparent').setup {
+      --       enable = false }
+      --   end
+      -- },
+      -- { "rhysd/vim-color-spring-night" },
+      {
         "prettier/vim-prettier",
-        ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'},
+        ft = { 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml',
+          'html' },
         run = 'yarn install --frozen-lockfile --production'
       },
       -- {
@@ -200,7 +206,7 @@ local config = {
       end,
     }
   end,
-  
+
 
   -- ["feline"] = function()
   --   local status_ok, null_ls = pcall(require, "feline")
@@ -215,7 +221,7 @@ local config = {
   --     }
   --   }
   -- end,
-  
+
   -- This function is run last
   -- good place to configure mappings and vim options
   polish = function()
@@ -225,6 +231,8 @@ local config = {
     local global = vim.g
     -- Set options
     set.relativenumber = true
+    -- catppuccin theme
+    global.catppuccin_flavour = "macchiato"
     -- Material theme settings
     global.material_style = "oceanic"
     -- Nightly colorscheme settings
@@ -240,14 +248,18 @@ local config = {
         autocmd bufwritepost plugins.lua source <afile> | PackerSync
       augroup end
     ]]
-    -- On saving javascript/typescript file format with prettier 
-    vim.cmd [[
-      autocmd bufwritepre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css | Prettier
-    ]]
 
+    -- On saving javascript/typescript file format with prettier
     vim.cmd [[
-      autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
+      autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css Prettier 
     ]]
+    -- vim.cmd [[
+    --   autocmd bufwritepre *.js,*.jsx,*.ts,*.tsx,*.graphql,*.html,*.css | Prettier
+    -- ]]
+    --
+    -- vim.cmd [[
+    --   autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync()
+    -- ]]
     -- vim folds
     vim.cmd [[
       filetype plugin indent on
