@@ -10,7 +10,7 @@ export AWS_CONFIG_FILE="~/.aws/config"
 
 # Dotfile git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias vim="nvim"
+# alias vim="nvim"
 alias zconfig="nvim ~/.zshrc"
 alias bconfig="nvim ~/.bashrc"
 alias tconfig="nvim ~/.tmux.conf"
