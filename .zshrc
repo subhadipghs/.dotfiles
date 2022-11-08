@@ -1,9 +1,13 @@
-
+function zle-line-init zle-keymap-select {
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/atomic-custom.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/velvet-custom.omp.json)"
 
 # AWS Configuration file with access id and secret access key
 export AWS_CONFIG_FILE="~/.aws/config"
@@ -18,7 +22,7 @@ alias reloadzsh="source ~/.zshrc"
 
 # Git aliases
 alias gc="git commit -v"
-alias gch="git checkout"
+alias gco="git checkout"
 alias ga="git add"
 alias gaa="git add ."
 alias gs="git status --short"
@@ -44,3 +48,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+
