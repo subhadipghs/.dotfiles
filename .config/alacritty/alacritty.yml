@@ -1,3 +1,8 @@
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+env:
+  TERM: xterm-256color
+
 schemes:
   # VSCode
   vscode: &vscode
@@ -155,16 +160,26 @@ font:
   # Normal (roman) font face
   normal:
     # family: "JetbrainsMono Nerd Font"
-    family: "MonacoB Nerd Font"
+    # family: "CourierPrimeCode Nerd Font Mono"
+    # family: "OperatorMonoNerdFontComplete Nerd Font Mono"
+    # family: "OperatorMono Nerd Font Mono"
+    # family: "CodeNewRoman Nerd Font Mono"
+    family: "EllographCF Nerd Font Mono"
+    # style: Bold
+    # family: "Operator Mono SSm Lig"
+    # style: Medium
+    # family: "MonacoB Nerd Font"
+    # family: "Mononoki Nerd Font"
+    # family: "Hurmit Nerd Font"
     # family: "Monolisa Nerd Font"
-    style: Bold
+    # style: Bold
     # Font size
-  size: 12.8
+  size: 13.5
   offset:
     x: 0 # For letter spacing.
-    y: 0 # For line spacing.
+    y: -3 # For line spacing.
 
-colors: *vscode
+# colors: *catppuccin-macchiato
 
 window:
   opacity: 1.0
