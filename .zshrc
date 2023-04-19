@@ -1,3 +1,4 @@
+ZSH_DISABLE_COMPFIX=true
 function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
@@ -7,7 +8,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/catppuccin.omp.json)"
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/tiwahu.omp.json)"
 
 # AWS Configuration file with access id and secret access key
 export AWS_CONFIG_FILE="~/.aws/config"
@@ -51,6 +52,7 @@ alias pg-super="cd ~/Documents/pg-superadmin-web/ && nvm use 14.19.1 && yarn sta
 alias cd-super="cd ~/Documents/pg-superadmin-web && nvm use 14.19.1"
 alias gcloud="~/Documents/google-cloud-sdk/bin/gcloud"
 alias elasticsearch="~/apps/elasticsearch/bin/elasticsearch"
+alias kibana="~/apps/kibana-8.2.0/bin/kibana"
 alias pg-local="cd ~/Documents/campuskudos-web/ && nvm use 14.19.1 && yarn run local"
 alias pg-install="cd ~/Documents/campuskudos-web/ && nvm use 14.19.1 && yarn run install-all"
 
