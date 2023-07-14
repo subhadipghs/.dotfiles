@@ -152,3 +152,4 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # oh-my-posh
 eval "$(oh-my-posh init bash --config ~/.poshthemes/robbyrussel.omp.json)"
+
