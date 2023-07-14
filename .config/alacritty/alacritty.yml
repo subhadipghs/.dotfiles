@@ -1,5 +1,3 @@
-import:
-  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
 env:
   TERM: xterm-256color
 
@@ -162,9 +160,9 @@ font:
     # family: "JetbrainsMono Nerd Font"
     # family: "CourierPrimeCode Nerd Font Mono"
     # family: "OperatorMonoNerdFontComplete Nerd Font Mono"
-    # family: "OperatorMono Nerd Font Mono"
+    family: "OperatorMono Nerd Font"
     # family: "CodeNewRoman Nerd Font Mono"
-    family: "EllographCF Nerd Font Mono"
+    # family: "Input Nerd Font Mono"
     # style: Bold
     # family: "Operator Mono SSm Lig"
     # style: Medium
@@ -172,16 +170,16 @@ font:
     # family: "Mononoki Nerd Font"
     # family: "Hurmit Nerd Font"
     # family: "Monolisa Nerd Font"
-    # style: Bold
+    style: Bold
     # Font size
-  size: 13.5
+  size: 13.0
   offset:
     x: 0 # For letter spacing.
-    y: -3 # For line spacing.
+    y: 3 # For line spacing.
 
-# colors: *catppuccin-macchiato
+colors: *tokyo-night
 
 window:
   opacity: 1.0
-  maximized: true
+  # maximized: true
   startup_mode: Maximized
